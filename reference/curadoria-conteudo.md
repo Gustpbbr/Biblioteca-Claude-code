@@ -225,6 +225,35 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - Caso de uso: Claude Code + Google AI Studio p/ redesign de interiores a partir de 1 foto (@ai.honeycove).
 - Menção: shiva.bytes lista o **Claude Code** como "AI pair programmer for production-ready code".
 
+### Mais achados (prints 241-294) — FIM da varredura Instagram (294/294 únicos)
+- **Connectors oficiais (Anthropic & Partners)** — vistos no painel (@tycaditecture): Canva, Figma,
+  Notion, Google Drive, Atlassian Rovo, Google Calendar, **Trimble SketchUp**, **Autodesk Fusion**.
+  (valida o Fusion MCP; SketchUp e Fusion criam/editam modelos 3D/CAD por linguagem natural)
+- **Higgsfield** — connector remoto `https://mcp.higgsfield.ai/mcp`; ou CLI (`npm i -g @higgsfield/...`,
+  `higgsfield auth login`, `npx skills add higgsfield-...`). "Funciona com Claude Code, Cursor, Codex +12".
+- 🚀 **"5 prompts do Claude para apps"** (@gurudoprompt) — pipeline completo c/ textos: (1) Arquiteto
+  do MVP, (2) Dev full-stack (código + deploy Vercel/Netlify), (3) Designer (design system + mobile),
+  (4) Monetizador (planos/checkout/HTML de preços), (5) Lançador em 10 min (canais + métrica de 7 dias).
+  → **Enriquecer a recipe `pipeline-5-prompts`** com estes prompts.
+- 🌐 **Image-Blaster** (`neilsonnn/image-blaster`) — open-source: fotos → mundos 3D jogáveis via Claude Code.
+- 🤝 **Memória/skills compartilhada entre 2 pessoas** — pasta sincronizada (OneDrive) só p/ memórias+skills;
+  ao fim de cada sessão ambos rodam uma skill de update. (padrão de colaboração em time)
+- 📜 **elder-plinius/CL4R1T4S** (~7k forks) — coleção de **system prompts** reconstruídos (CLAUDE-FABLE-5.md,
+  Claude-Opus-4.7, system prompt do Claude Code, etc.). Mostra a flag **`claude --system-prompt-file <arq>`**
+  (+ `--dangerously-skip-permissions`). ⚠️ uso "reviver Fable 5" é gimmick; útil como referência de prompts.
+- 🔡 **Lista de slash-commands** (@SoroushAsadiCom) — `/goal`, `/devil`, `/10x`, `/pitch`, `/ghost`,
+  `/compare`, `/scout`, `/build`, `/solve`, `/optimize`, `/critique`, `/explain`, `/brief`, `/teach`.
+  ⚠️ majoritariamente *custom* (não oficiais) — boas ideias de comandos próprios.
+- 📚 Carrossel @franklim.gui confirmou repos já catalogados (superpowers 95k, claude-mem 38k,
+  n8n-mcp, obsidian-skills, ui-ux-pro-max 44k, get-shit-done 34k, awesome-claude-code 29k).
+- Repetições/concorrentes descartados: Codex no Revit, Cursor (ananya), Seedance/Kling/AIReel (vídeo),
+  OpenMythos, ElevenLabs, conteúdo de concurso/arquitetura/render.
+
+### ✅ FECHAMENTO da pasta inteira
+**625 imagens no total.** Processadas: 100 (lote inicial) + ~40 (apps IA/diversos) + 294 (Instagram
+únicos) = **~434 lidas**. Não lidas: ~191 (banco/gov/pessoais/duplicatas, por decisão do usuário).
+Todo o conteúdo relevante de Claude Code foi extraído. Próximo passo: transformar os ⭐ em docs/recipes.
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).

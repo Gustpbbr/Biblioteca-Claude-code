@@ -102,6 +102,38 @@ plugins para Claude Code. A referência geral da categoria.
 > Tema relacionado: ver os cheatsheets `gestao-contexto-tokens.md` e
 > `claude-md-boas-praticas.md`.
 
+## 🆕 Novos da curadoria de Instagram (2026-06-18) — ⚠️ a verificar
+
+> Coletados de prints; **existência/licença ainda não conferida via clone**. Revise antes de usar.
+
+**Orquestração / multi-agente**
+- **claude-flow v3** — `npx claude-flow@v3alpha init`. 60+ agentes, swarms c/ consenso, "Queen-led",
+  178+ MCP tools, 42+ skills, "RuVector". Framework pesado de orquestração.
+- **affaan-m/ECC ("Everything Claude Code")** — harness de otimização: skills, instincts, memory,
+  security, research-first; PreToolUse hooks, prompt-defense; multi-tool (Claude Code/Codex/Cursor).
+
+**Skills**
+- **hardikpandya/stop-slop** — remove "AI tells" da prosa (escrita mais humana).
+- **mukul975/Anthropic-Cybersecurity-Skills** — 754 skills mapeadas p/ MITRE ATT&CK.
+- **AgricDaniel/banana-claude** — geração de imagem (Claude como "Diretor de Arte" via Gemini Nano Banana).
+- **remotion-dev/skills** — motion design/vídeo via Remotion (`npx skills add remotion-dev/skills`).
+- **anthropics/knowledge-work-plugins** (oficial) — plugins por área (eng., design, legal, finanças, RH…).
+
+**MCP / connectors**
+- **agent-browser** (`vercel-labs/agent-browser`) — browser autônomo p/ o Claude ("olhos").
+- **Blender MCP** — modelar/renderizar no Blender por linguagem natural.
+- **Higgsfield MCP** (`https://mcp.higgsfield.ai/mcp`) — gerar imagem/vídeo cinematográfico.
+- **Trimble SketchUp** e **Autodesk Fusion** — connectors oficiais (Anthropic & Partners) p/ 3D/CAD.
+- **GitNexus** (`abhigyanpatwari/GitNexus`) — grafo de conhecimento do codebase.
+
+**Referência / outros**
+- **elder-plinius/CL4R1T4S** — coleção de system prompts reconstruídos (uso da flag `--system-prompt-file`).
+- **neilsonnn/image-blaster** — fotos → mundos 3D jogáveis via Claude Code.
+- **Lum1104/Understand-Anything** — plugin multi-plataforma (claude/cursor/copilot).
+- Plugin **`/codex:review`** — roda review do OpenAI Codex de dentro do Claude Code.
+
+---
+
 ## ⚖️ Nota sobre uso
 
 Estes são repositórios de **terceiros**. Antes de instalar plugins/skills/MCP de
