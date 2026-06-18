@@ -237,7 +237,7 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - 🚀 **"5 prompts do Claude para apps"** (@gurudoprompt) — pipeline completo c/ textos: (1) Arquiteto
   do MVP, (2) Dev full-stack (código + deploy Vercel/Netlify), (3) Designer (design system + mobile),
   (4) Monetizador (planos/checkout/HTML de preços), (5) Lançador em 10 min (canais + métrica de 7 dias).
-  → **Enriquecer a recipe `pipeline-5-prompts`** com estes prompts.
+  ✅ recipe `construir-app-com-claude-code.md` já tem os 5 prompts + seção de integração.
 - 🌐 **Image-Blaster** (`neilsonnn/image-blaster`) — open-source: fotos → mundos 3D jogáveis via Claude Code.
 - 🤝 **Memória/skills compartilhada entre 2 pessoas** — pasta sincronizada (OneDrive) só p/ memórias+skills;
   ao fim de cada sessão ambos rodam uma skill de update. (padrão de colaboração em time)

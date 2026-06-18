@@ -191,6 +191,20 @@ todo dia. Esses 10 valem mais do que 1.000 cadastros que não voltam.
 
 ---
 
+## Turbine com os recursos do Claude Code
+
+Encaixe os recursos nativos (documentados nesta biblioteca) em cada etapa:
+
+| Etapa | Recurso | Como |
+|---|---|---|
+| Prompt 1 (Arquiteto) | **plan mode** (`docs/01`) | `Shift+Tab` até *plan* — o Claude propõe o plano sem tocar em arquivos. |
+| Prompt 2 (Dev) | **`/goal`** (`reference/loops-e-goals.md`) | `/goal o app compila, todos os testes passam e não há erro de lint` — ele itera até bater. |
+| Prompt 2/3 | **subagent revisor** (`building-blocks/agents/revisor-de-codigo.md`) | Delegue a revisão do diff a cada etapa, sem poluir o contexto principal. |
+| Prompt 2/3 | **hook de segurança** (`building-blocks/hooks/`) | `PreToolUse` bloqueia comandos perigosos enquanto o app é construído. |
+| Prompt 3 (Designer) | **skill de UI** (`reference/repos-recomendados.md`) | Ex.: `ui-ux-pro-max-skill` para design system mais robusto. |
+| Manutenção | **`/loop`** | `/loop 30m rode os testes e reporte regressões` enquanto você faz outra coisa. |
+| Memória | **`CLAUDE.md`** (`docs/02`) | Registre stack, comandos e regras do app pra não repetir contexto a cada prompt. |
+
 ## Pegadinhas
 
 - **Não é mágica:** o pipeline organiza o trabalho, mas você ainda revisa código,
@@ -198,3 +212,6 @@ todo dia. Esses 10 valem mais do que 1.000 cadastros que não voltam.
 - **Encadeie o contexto:** a qualidade do prompt N depende de colar bem a entrega do N-1.
 - **Combine com a biblioteca:** use o hook de segurança e o subagent `revisor-de-codigo`
   (em `building-blocks/`) enquanto o app é construído.
+- **Verifique de verdade:** prefira `/goal` com critério objetivo ("testes passam") a
+  confiar no "achei que ficou pronto" — o Claude tende a se autoaprovar (ver premortem em
+  `reference/curadoria-conteudo.md`).
