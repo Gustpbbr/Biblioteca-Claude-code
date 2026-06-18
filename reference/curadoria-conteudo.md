@@ -105,6 +105,36 @@ NVIDIA free APIs, DeepSeek, Cursor).
 
 ---
 
+## Lote 2026-06-18 (e) — restante da pasta (PARCIAL: ~140/625 lidos)
+
+> A contagem real da pasta é **625 imagens** (não 100 — a paginação do Drive
+> repetia a 1ª página). Li ~140 no total. O restante é majoritariamente pessoal.
+
+### 🔴 ALERTA DE SEGURANÇA — credenciais expostas em prints (REVOGAR/ROTACIONAR)
+- **`sk-ant-...`** (Anthropic API key) · **QDRANT** · **MEMO_API_KEY**
+- **Telegram botfather token** · **GitHub token (GITHUB_T...)**
+- **Supabase** (`NEXT_PUBLIC_SUPABASE_URL/ANON_KEY`) no Vercel
+- (Antes: Qdrant key e ANTHROPIC_API_KEY no Railway)
+- Nada disso foi copiado para o repositório.
+
+### ✅ Achados relevantes (Claude Code) deste trecho
+- **Claude Managed Agents** (verificado) → documentado em `docs/13-sdk-e-api.md`.
+- **Boris Cherny (criador do Claude Code) — workflow mobile:** Claude Code tem app
+  mobile (ele escreve código pelo iOS); `/teleport` continua uma sessão da nuvem na
+  máquina local; `/remote-control` controla uma sessão local pelo celular.
+- **GitNexus** (`abhigyanpatwari/GitNexus`) — grafo de conhecimento do codebase p/ Claude Code (MCP/skill).
+- **Dashboard multi-Claude** (hesamsheikh, via @ohmo.ai) — roda vários Claude Code em paralelo no mesmo codebase.
+- **Skill "Conselho dos 5" / Council** (@gabrielsamp.ai) — 5 "conselheiros" + peer review + chairman para reduzir alucinação ("fazer o Claude parar de mentir").
+- **Prompt de monetização de habilidades** (@fabricadegpt) — Claude lista formas de monetizar + Perplexity valida demanda. (prompt reutilizável)
+
+### ⏸️ Decisão sobre o restante (~485 imagens não lidas)
+O restante da pasta é dominado por Instagram (ads/carrosséis repetidos) e por
+conteúdo pessoal (Fluux, repo Gus, finanças, banco/gov) com **mais credenciais
+expostas**. ROI baixo de novas dicas de Claude Code. Recomendação: **não varrer
+exaustivamente**; ler sob demanda só apps/temas específicos que o usuário indicar.
+
+---
+
 ## Itens a transformar em conteúdo (backlog)
 
 - [ ] Recipe: "Compartilhar memórias e skills em equipe via pasta sincronizada"
