@@ -146,12 +146,61 @@ que você ainda não consegue fazer, explique que essa função será ativada em
   latência de rede/modelo — teste o **Flash v2.5** e um LLM rápido (Sonnet/Haiku).
 - Mantenha o prompt pedindo **respostas curtas** — resposta longa em voz cansa e atrasa.
 
-### Fase 2 — Ações rápidas (ler/responder) 🔌
-5. Conecta **MCP** de leitura: Google Calendar e Gmail (ver `docs/08`).
-6. Dá ao agente de voz as **ferramentas rápidas**: "ler próxima reunião", "resumir
-   últimos emails", "criar evento". São respostas de segundos → cabem na conversa.
-7. Monta o **briefing diário**: um `/loop` (ou cron do Managed Agents) que toda manhã
-   junta agenda + emails + tarefas e te manda (email ou te liga).
+### Fase 2 — Ações rápidas: email + agenda + briefing 🔌 — passo a passo
+
+> Meta da fase: o agente da Fase 1 passa a **ler sua agenda e seus emails** e **agir**
+> (criar evento, rascunhar/responder email) — tudo por voz, em segundos. E te dá um
+> **briefing diário**.
+>
+> ✅ Boa notícia: o **ElevenLabs Agents tem MCP nativo** (Tools → MCP), então dá pra
+> plugar Gmail e Google Calendar sem montar servidor próprio. (A própria ElevenLabs usa
+> isso no produto deles, o **11ai**.)
+
+**5. Conecte as ferramentas (MCP) — comece em modo LEITURA.**
+   No seu agente: **Tools → Add MCP server**. Conecte:
+   - **Google Calendar** (ler eventos; depois, criar).
+   - **Gmail** (ler/resumir; depois, rascunhar/enviar).
+   - Caminhos possíveis (escolha um):
+     - MCP "pronto" via **Composio/Zapier/SureTriggers** (mais rápido de plugar), ou
+     - um **MCP de Gmail/Calendar** próprio (mais controle — ver `docs/08-mcp.md`).
+   - Na **autorização**, dê **escopo mínimo** e, no começo, **somente leitura**.
+
+**6. Descreva bem cada ferramenta.** O agente decide quando chamar pela *descrição*.
+   Ex.: `proxima_reuniao` → "retorna o próximo evento da agenda de hoje"; `resumir_emails`
+   → "resume os N emails não lidos mais recentes". Descrição ruim = ele não usa na hora.
+
+**7. Ponha freio nas ações que mudam o mundo.** Ler é livre; **criar evento, enviar/
+   responder email → o agente CONFIRMA por voz antes** ("quer que eu envie?"). Configure
+   isso no system prompt e, se a plataforma permitir, exija confirmação na própria tool.
+
+**8. Teste por voz:**
+   - *"Qual minha próxima reunião?"* → lê do Calendar.
+   - *"Tenho email importante hoje?"* → resume do Gmail.
+   - *"Marca dentista quinta às 15h."* → ele confirma e cria o evento.
+
+**9. Briefing diário (cron):** crie um **gatilho agendado** (no SureTriggers/Make/n8n,
+   ou no Managed Agents da Fase 3) que toda manhã junta **agenda + emails não lidos +
+   tarefas** e te entrega — por **email**, ou fazendo o agente **te ligar** e falar o
+   resumo. Mantenha curto: "3 compromissos, 2 emails que pedem ação, 1 prazo hoje".
+
+**Acréscimo ao system prompt (cole junto ao da Fase 1):**
+```
+Agora você tem ferramentas: ler agenda (Google Calendar) e ler/resumir email (Gmail).
+- Para CONSULTAS (ler agenda, resumir emails), use a ferramenta direto e responda curto.
+- Para AÇÕES que mudam algo (criar evento, enviar/responder email), SEMPRE confirme em
+  voz antes de executar ("confirma que envio?") e só faça após o "sim".
+- Nunca invente dados de agenda/email: se a ferramenta não retornar, diga que não achou.
+```
+
+> ✅ **Fim da Fase 2:** assistente de voz que **consulta e age** na sua agenda e email,
+> com confirmação pro que é irreversível, + briefing diário automático.
+
+**Pegadinhas da Fase 2:**
+- **Permissão é tudo.** Comece read-only; só libere "enviar/criar" depois de confiar.
+- **OAuth/escopos do Google** podem dar trabalho na 1ª vez — siga o conector escolhido.
+- **Confirmação verbal** evita o pesadelo de mandar email errado "na sua voz".
+- **Tarefas rápidas só.** Se a ação for longa (montar um relatório, gerar vídeo), isso é
+  Fase 3 (background) — não trave a conversa.
 
 ### Fase 3 — Autonomia pesada (o "Jarvis" de verdade) 🤖
 8. Cria a **camada trabalhadora** com **Managed Agents** (recomendado p/ rodar 24/7 sem
@@ -233,6 +282,9 @@ Um agente que manda email "como você", mexe no seu Drive, gasta API e publica s
 - ElevenLabs — Claude na Conversational AI: https://elevenlabs.io/blog/introducing-claude-37-sonnet-in-elevenlabs-conversational-ai
 - ElevenLabs — vozes em português: https://elevenlabs.io/text-to-speech/portuguese
 - Guia "voice agent com Claude + ElevenLabs em ~15 min": https://www.mindstudio.ai/blog/build-voice-agent-claude-code-elevenlabs
+- ElevenLabs — MCP em Agents (Tools): https://elevenlabs.io/docs/eleven-agents/customization/tools/mcp
+- ElevenLabs — 11ai (assistente de voz que age via MCP): https://elevenlabs.io/blog/introducing-11ai
+- ElevenLabs — integrar voz com Google Calendar: https://elevenlabs.io/blog/integrating-ai-voice-tools-with-google-calendar
 - Comparativos 2026 (Vapi vs ElevenLabs vs LiveKit): https://softcery.com/lab/choosing-the-right-voice-agent-platform-in-2026 ·
   https://www.retellai.com/blog/vapi-vs-elevenlabs
 </content>
