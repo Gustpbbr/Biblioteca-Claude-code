@@ -277,9 +277,10 @@ receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorre
 
 ### ✅ Achados relevantes (Claude Code) deste trecho
 - **Claude Managed Agents** (verificado) → documentado em `docs/13-sdk-e-api.md`.
-- **Boris Cherny (criador do Claude Code) — workflow mobile:** Claude Code tem app
-  mobile (ele escreve código pelo iOS); `/teleport` continua uma sessão da nuvem na
-  máquina local; `/remote-control` controla uma sessão local pelo celular.
+- **Boris Cherny (criador do Claude Code) — workflow mobile:** ✅ `/teleport` (nuvem→local)
+  e `/remote-control` (controlar sessão local de outro device) **confirmados oficiais**
+  (documentado em `docs/11`). ⚠️ Correção: **não há app nativo do Claude Code** — mobile é
+  navegador (`claude.ai/code`) + `/remote-control` + app Claude pra acompanhar.
 - **GitNexus** (`abhigyanpatwari/GitNexus`) — grafo de conhecimento do codebase p/ Claude Code (MCP/skill).
 - **Dashboard multi-Claude** (hesamsheikh, via @ohmo.ai) — roda vários Claude Code em paralelo no mesmo codebase.
 - **Skill "Conselho dos 5" / Council** (@gabrielsamp.ai) — 5 "conselheiros" + peer review + chairman para reduzir alucinação ("fazer o Claude parar de mentir").
