@@ -44,6 +44,24 @@ vídeos). Sinaliza o que é **relevante** para a biblioteca (✅), o que é **ru
 
 ---
 
+## Lote 2026-06-18 (c) — 10 imagens
+
+### ✅ Relevante
+
+**1. "5 prompts do Claude para criar apps" (@gurudoprompt)** — carrossel de 7 slides.
+- Pipeline de 5 prompts: Arquiteto → Dev Full Stack → Designer → Monetizador → Lançador.
+- Embalagem clickbait ("R$10k/mês em 10 min"), mas a **estrutura dos prompts é boa**.
+- ✅ Já transcrito e virou recipe: `recipes/construir-app-com-claude-code.md`.
+
+### ❌ Ruído (não entra como técnica de Claude Code)
+
+- **Anúncios do Cursor** (@ui.ananya_ + trycursor, patrocinado) — mostram projeto de
+  hand-tracking (OpenCV+MediaPipe) e o seletor de modelos do Cursor (Composer, GPT-5.x,
+  Sonnet 4.6, Opus 4.6). É concorrente do Claude Code. Nota: o Cursor roda modelos
+  Claude, mas é outro cliente — fora do escopo da biblioteca (que é sobre Claude Code).
+
+---
+
 ## Itens a transformar em conteúdo (backlog)
 
 - [ ] Recipe: "Compartilhar memórias e skills em equipe via pasta sincronizada"
