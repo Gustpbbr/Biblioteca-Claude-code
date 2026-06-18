@@ -164,6 +164,32 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - Fable 5 (hype @Overlens) — confirma editor de imagem com presets (1-bit dither, film grain,
   vaporwave, blueprint, thermal cam, etc.) — alinhado com `docs/14` (skills de mídia).
 
+### ⭐⭐ Achado de alto valor (prints 141-160): carrossel "LOOPS" (@Overlens)
+> Complementa a fala do Boris Cherny ("escreva os loops"). **Vira um doc/recipe dedicado**
+> (`reference/loops-e-goals.md` ou recipe). Comandos `/loop` e `/goal` — ⚠️ confirmar `/goal` na doc oficial.
+- **`/loop`** — você digita `/loop` e descreve o alvo. Ex.: apontar uma pilha de livros e pedir
+  resumo de cada um na ordem; iterar um design até bater a referência.
+- **Dois modos:**
+  - **Loop fixo** (`/loop 5m ...`) — roda no relógio, repete a cada 5 min. Bom p/ vigiar algo
+    que não pode cair (ex.: site no ar).
+  - **Loop dinâmico** — sem relógio; termina uma volta e se re-chama até bater o alvo. Use quando
+    não souber quanto a tarefa vai durar.
+- **Loops com alvo (goal-driven)** — precisa de um alvo *conferível* e um **verificador externo**
+  (a IA não pode julgar a própria prova). Duas implementações:
+  - **Claude Code `/goal`**: estado final mensurável; grader independente (modelo Haiku); veredito
+    "não atingido" inicia a próxima volta; limite por turnos/tempo; feedback do grader; auto-limpa
+    ao atingir ou `/goal clear`.
+  - **Claude Managed Agent Outcomes**: rubrica com critérios graduáveis; sub-agente grader
+    independente; iterar→avaliar→revisar; limite `max_iterations`; sai quando passa a rubrica.
+- Teste da Anthropic: 9 critérios; verificador separado só deixou o loop parar quando todos passaram.
+- **O que um bom loop entrega:** tarefa que termina com o laptop fechado; code review a cada
+  mudança; migração de DB testada a cada passo; design refeito até bater o alvo; resumos prontos
+  quando você acorda.
+- ⚠️ **"Paralelismo queima dinheiro":** 1 loop gasta pouco; dezenas em paralelo evaporam tokens
+  (relato: 5M tokens em 3 min) e, pior, não trocam descobertas (todas batem na mesma pedra).
+  Comece com **um loop só**.
+- Menor: **Higgsfield MCP** (@evolving.ai) — MCP que faz o Claude gerar vídeo/visuais (mídia).
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
