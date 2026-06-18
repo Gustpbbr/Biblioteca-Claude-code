@@ -127,11 +127,16 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - **Skill "Conselho dos 5" / Council** (@gabrielsamp.ai) — 5 "conselheiros" + peer review + chairman para reduzir alucinação ("fazer o Claude parar de mentir").
 - **Prompt de monetização de habilidades** (@fabricadegpt) — Claude lista formas de monetizar + Perplexity valida demanda. (prompt reutilizável)
 
-### ⏸️ Decisão sobre o restante (~485 imagens não lidas)
-O restante da pasta é dominado por Instagram (ads/carrosséis repetidos) e por
-conteúdo pessoal (Fluux, repo Gus, finanças, banco/gov) com **mais credenciais
-expostas**. ROI baixo de novas dicas de Claude Code. Recomendação: **não varrer
-exaustivamente**; ler sob demanda só apps/temas específicos que o usuário indicar.
+### ✅ Fechamento (decisão do usuário: "só apps de IA específicos")
+Lidos também os ~20 prints restantes de Claude/ChatGPT/GitHub/DeepSeek.
+**Nenhum conteúdo novo de Claude Code** — todos pessoais (app de finanças
+`contas_roger`/Fluux, "Livro Dourado da República" p/ concurso, fichas de estudo,
+mensagens "Fable 5 unavailable / mythos-access"). Os 328 Instagram + demais apps
+(banco/gov/navegador) **não foram varridos** por decisão do usuário (ROI baixo,
+risco de dado pessoal). Varredura encerrada.
+
+**Total processado:** ~160 de 625 imagens. O conteúdo relevante de Claude Code
+foi todo extraído e catalogado nos arquivos da biblioteca.
 
 ---
 
