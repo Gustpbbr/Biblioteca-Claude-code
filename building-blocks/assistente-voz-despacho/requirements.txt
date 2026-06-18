@@ -1,0 +1,5 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+# Para plugar o agente real, adicione tb:
+# anthropic            # Claude API (Messages / Managed Agents)
+# claude-agent-sdk     # se for rodar o loop você mesmo (Agent SDK)

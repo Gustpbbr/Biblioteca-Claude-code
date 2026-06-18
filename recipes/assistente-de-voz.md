@@ -58,6 +58,28 @@ A camada de voz é o **recepcionista** (rápido, sempre disponível). A camada t
 são os **funcionários** (fazem o trabalho duro e avisam quando acaba). É o padrão
 **fire-and-forget / job assíncrono**.
 
+### Diagrama (renderiza no GitHub)
+
+```mermaid
+flowchart TD
+    U(["🗣️ Você fala"]) --> V
+    subgraph VOZ["⚡ Camada de voz — rápida (ms)"]
+      V["ElevenLabs Agents<br/>cérebro = Claude"]
+    end
+    V -->|"pergunta rápida<br/>(agenda / email)"| T1[("MCP: Calendar / Gmail")]
+    T1 --> V
+    V -.->|"responde já:<br/>'tô fazendo, te aviso'"| U
+    V -->|"tarefa pesada"| D[/"criar_tarefa() → fila"/]
+    subgraph BG["🐢 Camada trabalhadora — lenta (min/h), background"]
+      W["Claude Managed Agents<br/>ou Agent SDK"]
+    end
+    D --> W
+    W --> M["gera vídeo / site / relatório"]
+    M --> S["salva no Drive + manda email"]
+    S --> N[["notifica / liga pra você"]]
+    N --> U
+```
+
 ---
 
 ## 🧩 Componentes
@@ -333,6 +355,24 @@ Um agente que manda email "como você", mexe no seu Drive, gasta API e publica s
 
 ---
 
+## ✅ Checklist: começar HOJE (Fase 1)
+
+- [ ] Criar conta no **ElevenLabs** → abrir **Agents** → **Create agent**
+- [ ] *Language* = **Portuguese (Brazil)**
+- [ ] *Voice* = voz BR (**Keren** ou **Roberta**) + modelo **Flash v2.5**
+- [ ] *LLM* = **Claude** (Sonnet 4.x) — ou **Custom LLM URL** + `ANTHROPIC_API_KEY`
+- [ ] Colar o **system prompt da Fase 1** (respostas curtas, faladas, interrompível)
+- [ ] *Greeting* curto ("Oi, no que ajudo?")
+- [ ] **Talk to agent** e ajustar voz/latência/prompt até ficar fluido
+- [ ] 🎉 Você já tem a conversa por voz funcionando
+
+Depois (quando quiser evoluir):
+- [ ] **Fase 2** — conectar **MCP** Calendar/Gmail em **read-only** + briefing diário
+- [ ] **Fase 3** — subir o esqueleto de despacho
+  ([`building-blocks/assistente-voz-despacho/`](../building-blocks/assistente-voz-despacho/))
+  e plugar o agente trabalhador (Managed Agents / Agent SDK)
+- [ ] 🔐 Antes de liberar autonomia: **rotacionar chaves vazadas** + teto de gasto + log
+
 ## 🔗 Peças desta recipe no repo
 
 - Camadas (Code/SDK/API/Managed Agents): [`docs/13-sdk-e-api.md`](../docs/13-sdk-e-api.md)
@@ -341,6 +381,7 @@ Um agente que manda email "como você", mexe no seu Drive, gasta API e publica s
 - Delegar (subagents): [`docs/05-subagents.md`](../docs/05-subagents.md)
 - Gerar mídia (vídeo/imagem/áudio): [`docs/14-habilidades-de-midia.md`](../docs/14-habilidades-de-midia.md)
 - Buildar app/site: [`recipes/construir-app-com-claude-code.md`](./construir-app-com-claude-code.md)
+- Esqueleto da tool de despacho (Fase 3): [`building-blocks/assistente-voz-despacho/`](../building-blocks/assistente-voz-despacho/)
 - Modelos (qual usar): [`reference/modelos-claude.md`](../reference/modelos-claude.md)
 
 ## 📚 Referências oficiais (confirme antes de depender)
