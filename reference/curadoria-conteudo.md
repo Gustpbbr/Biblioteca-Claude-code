@@ -126,6 +126,25 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - **paperclip** (`paperclip.ing`) — orquestração open-source de agentes (~51k stars).
 - Demos de multi-agente em produção citam modelos reais: **`claude-sonnet-4-6`**, **`claude-haiku-4-5`** (confirma IDs).
 
+### Mais achados (prints 41-80)
+- **Técnica "premortem"** (@hollyfield.ia) — contra a bajulação do Claude ("acha tudo ótimo"),
+  peça um premortem: "simule por que este plano fracassou daqui a X meses". (vira prompt/técnica)
+- 📋 **Lista "15 coisas que instalei no Claude Code"** (@laschuk):
+  - Skills: `superpowers`, `frontend-design`, `caveman` (corta ~65% dos tokens),
+    `overclock-mkt` (pipeline de carrossel → PNG), `deploy` (deploy 1 comando).
+  - MCP servers: `playwright` (opera sites), `supabase` (DB ao vivo), `overclock`
+    (workspace + agentes visíveis), `sydra` (transcreve YouTube), `emailhacker` (email por voz).
+  - Config: `CLAUDE.md`, `hooks`, `settings.json` (zero permissões), `~/.secrets`
+    (credenciais fora do repo), `caveman mode` (respostas mais rápidas no terminal).
+- 🌐 **agent-browser** (`vercel-labs/agent-browser`) — skill/plugin que dá "olhos" ao Claude
+  Code: browser autônomo, "pull context from anywhere" (`.claude-plugin`).
+- 🐝 **claude-flow v3** (@fabianocarvalhojr) — `npx claude-flow@v3alpha init`. Framework de
+  orquestração: 60+ agentes especializados, swarms com 5 protocolos de consenso, "Queen-led",
+  178+ MCP tools, 42+ skills, "RuVector Intelligence", 6 providers c/ failover. (⚠️ verificar repo)
+- **Understand-Anything** (`Lum1104/Understand-Anything`) — plugin multi-plataforma
+  (`.claude-plugin` / `.cursor-plugin` / `.copilot-plugin`), usa `docs/superpowers`.
+- Variante da skill "Conselho/Council" também vista em @maxcarrauda (mesmo conceito do @gabrielsamp).
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
