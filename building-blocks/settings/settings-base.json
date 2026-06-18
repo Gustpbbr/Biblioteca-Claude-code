@@ -1,0 +1,29 @@
+{
+  "$comentario": "Template base de settings.json para Claude Code. Copie para .claude/settings.json (versionado no projeto) ou .claude/settings.local.json (apenas local, não commitar). Remova os campos $comentario antes de usar.",
+
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run lint:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Read(./.env)",
+      "Read(./secrets/**)"
+    ],
+    "ask": [
+      "Bash(git push:*)"
+    ]
+  },
+
+  "env": {
+    "$comentario_env": "Variáveis de ambiente expostas à sessão. Ex.: desligar telemetria, fixar limites."
+  },
+
+  "hooks": {
+    "$comentario_hooks": "Registre hooks aqui. Veja building-blocks/hooks/ para exemplos prontos."
+  }
+}
