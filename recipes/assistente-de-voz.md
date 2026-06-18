@@ -76,16 +76,75 @@ são os **funcionários** (fazem o trabalho duro e avisam quando acaba). É o pa
 
 ---
 
+## 🗣️ Qual plataforma para português (BR)? (pesquisa 2026-06)
+
+**Recomendação: comece pelo ElevenLabs Agents.** Motivos, conferidos na doc/blog oficial:
+
+- ✅ **Aceita o Claude como cérebro nativamente** — Claude Sonnet 4.x e Haiku estão na
+  lista de LLMs do ElevenLabs Agents (e dá pra apontar um *Custom LLM URL* também). Ou
+  seja: **um fornecedor só** já faz voz + agente + Claude pensando.
+- ✅ **Melhor voz em PT-BR** — vozes brasileiras prontas (Keren, Roberta, Diego, Lax…) e
+  o modelo **Flash v2.5 com ~75ms de latência**, feito pra conversa em tempo real.
+- ✅ **Mais fácil de começar** — tem widget web/telefone pronto; existe até guia oficial
+  "voice agent com Claude + ElevenLabs em ~15 min".
+
+**Alternativas (pra depois, se precisar):**
+- **Vapi** — camada de orquestração multi-fornecedor: usa **Claude** como LLM + voz do
+  **ElevenLabs** por baixo. Escolha quando quiser trocar peças/escalar telefonia. ~536ms.
+- **LiveKit / Pipecat** — frameworks "dev-first" (você monta STT+LLM+TTS). Mais controle,
+  mais trabalho. Bom pra rodar local (Fase "Local no meu PC").
+
+> Regra de ouro de latência: acima de ~500ms a conversa "parece quebrada". ElevenLabs
+> (Flash) fica bem abaixo disso. Fontes: ver "Referências" no fim.
+
 ## 🪜 Passo a passo (em 3 fases)
 
 > Faça em fases. Cada fase **funciona sozinha** e já é útil — não tente a autonomia
 > total no dia 1.
 
-### Fase 1 — Conversa fluida (uma tarde) ✅
-1. Cria uma conta numa plataforma de voz (comece por **ElevenLabs Agents** ou **Vapi**).
-2. Cria um "agent" lá e escolhe **Claude** como modelo (LLM), com sua `ANTHROPIC_API_KEY`.
-3. Escreve o **system prompt** (quem ele é, tom, que ele é seu assistente pessoal).
-4. Testa pelo telefone/web. **Pronto: você já conversa por voz, fluido.**
+### Fase 1 — Conversa fluida (uma tarde) ✅ — passo a passo (ElevenLabs Agents)
+
+> Meta da fase: você **fala** e o Claude **responde por voz**, em PT-BR, fluido. Sem
+> integrações ainda. Tudo pela interface web do ElevenLabs (não precisa codar).
+
+1. **Conta:** crie em `elevenlabs.io`. No menu, abra **Agents** (Conversational AI) →
+   **Create agent** (pode partir de um template em branco).
+2. **Idioma:** em *Language*, selecione **Portuguese (Brazil)**.
+3. **Voz:** em *Voice*, escolha uma voz **BR** (ex.: **Keren** ou **Roberta**) e o modelo
+   de fala **Flash v2.5** (menor latência). Ouça o preview até gostar.
+4. **Cérebro (LLM):** em *LLM*, selecione **Claude** (Sonnet 4.x para rapidez na conversa).
+   - Se a versão que você quer não estiver na lista, use **Custom LLM URL** apontando para
+     a Claude API e cole sua `ANTHROPIC_API_KEY` no campo de credencial.
+5. **System prompt:** defina a persona (exemplo pronto abaixo).
+6. **Primeira fala (greeting):** algo como *"Oi Gustavo, sou seu assistente. No que ajudo?"*
+7. **Testar:** clique em **Talk to agent** (widget web) e converse. Ajuste voz/latência/
+   prompt até a conversa ficar natural.
+8. **(opcional) Levar pro dia a dia:** incorpore o **widget** num site/página sua, ou ligue
+   o agente a um **número de telefone** pelas opções de *Phone* da plataforma.
+
+**Exemplo de system prompt (cole e ajuste):**
+```
+Você é o assistente pessoal do Gustavo. Fala português do Brasil, de forma natural,
+direta e calorosa — como um amigo competente, não como um robô formal.
+
+Regras de conversa por voz:
+- Respostas CURTAS e faladas (1–3 frases). Nada de listas longas ou markdown.
+- Se a pergunta for ambígua, pergunte de volta em vez de chutar.
+- Se você não souber ou não tiver a ferramenta, diga isso com honestidade.
+- Pode ser interrompido a qualquer momento; quando isso acontecer, pare e ouça.
+
+Por enquanto você só conversa (sem acesso a email/agenda/arquivos). Se pedirem uma ação
+que você ainda não consegue fazer, explique que essa função será ativada em breve.
+```
+
+> ✅ **Fim da Fase 1:** você já tem um "Jarvis" que conversa por voz em PT-BR com o
+> cérebro do Claude. As Fases 2 e 3 (ações e autonomia) entram depois, por cima disto.
+
+**Pegadinhas da Fase 1:**
+- **Custo é por minuto/créditos** de conversa — comece no plano free/baixo pra testar.
+- Se a voz soar "lida demais", troque a voz ou baixe a expressividade; se travar, é
+  latência de rede/modelo — teste o **Flash v2.5** e um LLM rápido (Sonnet/Haiku).
+- Mantenha o prompt pedindo **respostas curtas** — resposta longa em voz cansa e atrasa.
 
 ### Fase 2 — Ações rápidas (ler/responder) 🔌
 5. Conecta **MCP** de leitura: Google Calendar e Gmail (ver `docs/08`).
@@ -170,5 +229,11 @@ Um agente que manda email "como você", mexe no seu Drive, gasta API e publica s
 - Claude Managed Agents (beta): https://platform.claude.com
 - Plataformas de voz: ElevenLabs Agents (`elevenlabs.io`), Vapi (`vapi.ai`),
   LiveKit Agents (`livekit.io`), Pipecat (`pipecat.ai`) — comparar latência/preço/idioma PT-BR.
+- ElevenLabs — LLMs suportados (Claude): https://elevenlabs.io/docs/eleven-agents/customization/llm
+- ElevenLabs — Claude na Conversational AI: https://elevenlabs.io/blog/introducing-claude-37-sonnet-in-elevenlabs-conversational-ai
+- ElevenLabs — vozes em português: https://elevenlabs.io/text-to-speech/portuguese
+- Guia "voice agent com Claude + ElevenLabs em ~15 min": https://www.mindstudio.ai/blog/build-voice-agent-claude-code-elevenlabs
+- Comparativos 2026 (Vapi vs ElevenLabs vs LiveKit): https://softcery.com/lab/choosing-the-right-voice-agent-platform-in-2026 ·
+  https://www.retellai.com/blog/vapi-vs-elevenlabs
 </content>
 </invoke>
