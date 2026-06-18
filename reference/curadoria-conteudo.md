@@ -205,6 +205,26 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - Descartado por não ser Claude Code: OpenMythos (recriação teórica da arquitetura "Mythos"),
   listas genéricas de repos open-source, ferramentas de planta de casa (drafted.ai), RuView (wifi-sensing).
 
+### Mais achados (prints 201-240)
+- 🎬 **Remotion skill** (@maxcarrau.ia) — "Motion Design using Claude Code": `npx skills add
+  remotion-dev/skills` (skill `remotion-best-practices`); você descreve e o Claude gera a animação
+  via Remotion. Bom registro do padrão de instalação **`npx skills add <owner/repo>`**.
+- 🖼️ **banana-claude** (`AgricDaniel/banana-claude`) — skill de geração de imagem p/ Claude Code:
+  Claude atua como "Diretor de Arte" usando os modelos Gemini Nano Banana. Há também "Nano Banana
+  MCP" p/ gerar imagem dentro do Claude (Code, Desktop, Cowork).
+- 📊 **Tabela comparativa de modelos** (@dfolloni, via cursorful.com) — Opus 4.7: 87.6% SWE-bench
+  Verified, contexto 1M, $5/$25 por 1M tok; Sonnet 4.6: 79.6%, 1M, $3/$15 (**default do Claude
+  Code**); GPT-5.3 Codex: 77.3%, 400K, $1.75/$14. (data point p/ doc de modelos; ⚠️ confirmar números)
+- 🔌 **Plugin `/codex:review`** — roda um review do OpenAI Codex de dentro do Claude Code (read-only,
+  suporta `--background`, `base main`). "A OpenAI quer que você use o Claude Code".
+- 💬 **Técnica de prompt p/ construir agentes** (@akashafter2am): BAD ("build me an AI agent") →
+  BETTER ("...ask me questions first") → BEST (arquivos de contexto `BUSINESS.md`, `CUSTOMERS.md`,
+  `GOALS.md`, `TOOLS.md`, `SOPS.md` + "use my files, design a multi-agent system, show feedback loops").
+- 🎓 Prompts de estudo (@ronymeisler): plano de 20h (Pareto), "me teste com 10 perguntas",
+  escada de 5 níveis, técnica Feynman. (genéricos, mas úteis)
+- Caso de uso: Claude Code + Google AI Studio p/ redesign de interiores a partir de 1 foto (@ai.honeycove).
+- Menção: shiva.bytes lista o **Claude Code** como "AI pair programmer for production-ready code".
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
