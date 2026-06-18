@@ -165,8 +165,9 @@ NVIDIA free APIs, DeepSeek, Cursor).
   vaporwave, blueprint, thermal cam, etc.) — alinhado com `docs/14` (skills de mídia).
 
 ### ⭐⭐ Achado de alto valor (prints 141-160): carrossel "LOOPS" (@Overlens)
-> Complementa a fala do Boris Cherny ("escreva os loops"). **Vira um doc/recipe dedicado**
-> (`reference/loops-e-goals.md` ou recipe). Comandos `/loop` e `/goal` — ⚠️ confirmar `/goal` na doc oficial.
+> Complementa a fala do Boris Cherny ("escreva os loops"). ✅ **VIROU DOC:**
+> `reference/loops-e-goals.md` (escrito 2026-06-18). `/loop` e `/goal` confirmados
+> (oficial: `code.claude.com/docs/en/scheduled-tasks`; `/goal` desde v2.1.139+).
 - **`/loop`** — você digita `/loop` e descreve o alvo. Ex.: apontar uma pilha de livros e pedir
   resumo de cada um na ordem; iterar um design até bater a referência.
 - **Dois modos:**
