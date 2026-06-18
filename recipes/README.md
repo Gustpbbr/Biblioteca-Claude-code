@@ -6,6 +6,9 @@ Guias práticos de ponta a ponta para tarefas comuns com o Claude Code.
 
 - [`construir-app-com-claude-code.md`](./construir-app-com-claude-code.md) — pipeline
   de 5 prompts (arquiteto → dev → designer → monetização → lançamento).
+- [`assistente-de-voz.md`](./assistente-de-voz.md) — assistente de voz autônomo
+  ("Jarvis"): conversa fluida + Claude como cérebro + autonomia (faz vídeo, site,
+  manda email, salva no Drive). Arquitetura em 2 camadas + 3 fases.
 
 ## Receitas previstas
 
