@@ -190,6 +190,21 @@ NVIDIA free APIs, DeepSeek, Cursor).
   Comece com **um loop só**.
 - Menor: **Higgsfield MCP** (@evolving.ai) — MCP que faz o Claude gerar vídeo/visuais (mídia).
 
+### Mais achados (prints 161-200)
+- **Blender MCP** (@leamotion) — controlar o Blender via Claude (modelar/renderizar; "create a low
+  poly forest"; usa Hyper3D/Tencent assets). MCP de 3D popular.
+- **Autodesk Fusion MCP connector** (@ai.droplets) — "Claude aprendeu CAD": descreve a mudança em
+  inglês, Claude lê a montagem e modifica ao vivo (sem menus). (⚠️ verificar se é oficial Anthropic)
+- **Higgsfield MCP** (@stee.ugc) — gera imagens/vídeos cinematográficos. Documenta o fluxo de
+  **adicionar um connector remoto (Remote MCP) no claude.ai**: Configurações → Connectors →
+  "Add custom connector (BETA)" → cola a URL do MCP remoto. Também usado p/ gerar vídeo de produto.
+- Exemplo de **browser/computer-use** (@priscilareis.ai) — Claude Sonnet 4.6 cancelando inscrições
+  de email em lote (`browser_batch`: Click + screenshot, com "Ask before acting").
+- Tendência: **"JARVIS"** (@gaabfernandes7 / codandoai) — produto que orquestra 17 agentes
+  (Opus 4.7 cérebro + Sonnet 4.6 + GPT), memória persistente no **Obsidian**, comando por voz.
+- Descartado por não ser Claude Code: OpenMythos (recriação teórica da arquitetura "Mythos"),
+  listas genéricas de repos open-source, ferramentas de planta de casa (drafted.ai), RuView (wifi-sensing).
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
