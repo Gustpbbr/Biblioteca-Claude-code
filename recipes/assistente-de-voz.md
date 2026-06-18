@@ -202,18 +202,89 @@ Agora você tem ferramentas: ler agenda (Google Calendar) e ler/resumir email (G
 - **Tarefas rápidas só.** Se a ação for longa (montar um relatório, gerar vídeo), isso é
   Fase 3 (background) — não trave a conversa.
 
-### Fase 3 — Autonomia pesada (o "Jarvis" de verdade) 🤖
-8. Cria a **camada trabalhadora** com **Managed Agents** (recomendado p/ rodar 24/7 sem
-   você gerir servidor) ou **Agent SDK** no seu PC.
-9. Dá ao agente de voz **uma ferramenta nova: `despachar_tarefa(descrição)`**. Quando
-   você pede algo pesado, ele NÃO faz na conversa — ele chama essa ferramenta, responde
-   *"beleza, tô fazendo, te aviso quando terminar"*, e o trabalho vai pra fila.
-10. A camada trabalhadora pega a tarefa e executa com **autonomia** (`/goal`: "vídeo
-    gerado E salvo no Drive E email enviado"), usando as ferramentas:
-    - **vídeo** → habilidades de mídia (`docs/14`) ou API de vídeo;
-    - **site** → Claude Code gera o código e dá deploy (Vercel);
-    - **entrega** → salva no Drive + manda email (MCP).
-11. Ao terminar, ela **te notifica** (email/push, ou faz a plataforma de voz te ligar).
+### Fase 3 — Autonomia pesada (o "Jarvis" de verdade) 🤖 — passo a passo
+
+> Meta da fase: você pede por voz uma tarefa **longa** ("faz um vídeo de 30s sobre X e
+> manda no meu email", "cria um site de uma página pra meu evento"), o agente responde
+> **na hora** *"beleza, tô fazendo, te aviso"*, e um **trabalhador em background** faz
+> tudo sozinho e te entrega pronto.
+>
+> ⚠️ **Aqui muda o nível.** Fases 1–2 são configuração na interface. A Fase 3 exige
+> **engenharia** (um endpoint/fila + um agente trabalhador). Não é no-code.
+
+**O fluxo (relembrando a sacada das 2 camadas):**
+```
+Voz: "faz um vídeo sobre X e manda no meu email"
+  └─ agente de voz chama a tool  criar_tarefa(titulo, descricao)
+       └─ cria um JOB e responde JÁ: "tô fazendo, te aviso" (não espera!)
+            └─ TRABALHADOR (background) pega o job:
+                 1) gera o vídeo  2) salva no Drive  3) manda o email
+                 4) marca job como "pronto" + te NOTIFICA
+```
+
+**8. Escolha o motor do trabalhador.**
+   - **Claude Managed Agents** (recomendado) — hospedado, roda 24/7 sem você manter
+     servidor, tem **memória persistente, cron e cofre de credenciais**, e o conceito de
+     **"Outcomes"** (rubrica + grader + `max_iterations`) que é o `/goal` embutido. Você
+     cria a tarefa via API (`/v1/agents` · `/v1/sessions`). Ver `docs/13`.
+   - **Claude Agent SDK** — se preferir rodar no **seu** servidor/PC e ter controle total
+     do loop. Mais trabalho de infra.
+
+**9. Crie a tool de despacho no agente de voz.**
+   No ElevenLabs (Tools), adicione **`criar_tarefa`** apontando para um **webhook seu** (ou
+   um MCP). Esse endpoint só faz uma coisa: **registra o job** (numa fila/DB) e responde
+   rápido com um `job_id`. O agente de voz **não** espera o trabalho terminar.
+   - Acrescente também **`status_tarefa(job_id)`** pra você poder perguntar depois
+     *"como tá meu vídeo?"*.
+
+**10. Configure o trabalhador (a persona + as ferramentas + o "pronto").**
+   - **Ferramentas** que ele precisa, conforme a tarefa:
+     - **vídeo/imagem/áudio** → habilidades de mídia (`docs/14`) ou uma API de vídeo;
+     - **site** → o próprio **Claude Code/Agent SDK** gera o código e dá **deploy (Vercel)**
+       (ver `recipes/construir-app-com-claude-code.md`);
+     - **entrega** → **Drive** (salvar arquivo) + **Gmail** (mandar) via MCP.
+   - **Critério de conclusão (Outcome/`/goal`):** defina algo **conferível**, ex.:
+     `"vídeo gerado E salvo no Drive E email com o link enviado"`. Sem alvo externo, ele
+     "acha" que terminou cedo (ver `reference/loops-e-goals.md`).
+   - **System prompt do trabalhador:** regras de qualidade e de entrega (formato, duração,
+     onde salvar, o que escrever no email).
+
+**11. Notifique você no fim.**
+   Ao bater o Outcome, o trabalhador: marca o job `pronto`, **manda o email/Drive**, e te
+   **avisa** por um destes:
+   - email/push simples (mais fácil), ou
+   - **ligação de voz ativa**: dispara uma *outbound call* da plataforma pro seu número e
+     o agente fala *"terminei seu vídeo, mandei no email"* (ElevenLabs suporta chamada de
+     saída). Fecha o ciclo "Jarvis".
+
+**12. Trave a autonomia (releia a seção de Segurança).**
+   Com o trabalhador podendo gastar, enviar e publicar: **teto de gasto por job**,
+   **confirmação pro irreversível**, **credenciais no cofre com escopo mínimo**, **sandbox**
+   e **log de todas as ações**. Comece com **1 tipo de tarefa** (ex.: só vídeo) antes de
+   abrir pra "qualquer coisa".
+
+> ✅ **Fim da Fase 3:** você fala, ele despacha, o trabalho acontece sozinho e volta
+> pronto no seu email/Drive — com você avisado. Esse é o "Jarvis" completo.
+
+**Exemplo ponta a ponta:**
+```
+Você (voz):  "Cria um site de uma página pro meu curso e manda o link no meu email."
+Agente:      "Fechou. Tô montando e te aviso quando publicar." [chama criar_tarefa]
+... (minutos depois, em background) ...
+Trabalhador: gera o código → deploy na Vercel → salva o repo no Drive →
+             manda email com o link → marca job pronto → te liga:
+Agente (liga): "Seu site tá no ar, mandei o link no email. Quer que eu ajuste algo?"
+```
+
+**Pegadinhas da Fase 3:**
+- **Nunca faça a tarefa longa na conversa.** A tool de despacho responde em ~1s; o
+  trabalho vai pra fila. Se travar a voz, errou a arquitetura.
+- **Tarefa vaga = resultado ruim.** "Faz um vídeo" precisa virar instrução detalhada — o
+  trabalhador deve **perguntar o que falta** (ou ter defaults claros) antes de gastar.
+- **Custo explode com autonomia.** Tarefas longas/multi-passos e paralelismo queimam
+  tokens rápido. Teto por job + começar com 1 loop (ver `reference/loops-e-goals.md`).
+- **Idempotência/falha.** O job pode falhar no meio (API de vídeo caiu, deploy quebrou).
+  Tenha retry e um estado de `erro` que te notifica — não deixe o job "sumir".
 
 ---
 
