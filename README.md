@@ -42,6 +42,7 @@ Explicação completa de cada funcionalidade, sempre no mesmo formato:
 | 11 | IDE e Claude Code na web/cloud | [`docs/11-ide-e-web-cloud.md`](./docs/11-ide-e-web-cloud.md) |
 | 12 | GitHub Actions | [`docs/12-github-actions.md`](./docs/12-github-actions.md) |
 | 13 | SDK de agentes e API Claude | [`docs/13-sdk-e-api.md`](./docs/13-sdk-e-api.md) |
+| 14 | Habilidades de mídia (imagem, vídeo, áudio, design) | [`docs/14-habilidades-de-midia.md`](./docs/14-habilidades-de-midia.md) |
 
 ---
 
