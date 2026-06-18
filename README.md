@@ -77,9 +77,39 @@ Cheatsheets e tabelas para olhar em segundos:
 
 ## 🚀 Como usar em outros projetos
 
-> Esta seção será detalhada conforme as peças forem preenchidas. A ideia:
-> copiar building-blocks para o `.claude/` do projeto-alvo, ou referenciar
-> esta biblioteca como submódulo/fonte de consulta.
+Três formas, da mais simples à mais integrada:
+
+### 1. Copiar peças prontas (mais comum)
+Copie o que precisar de `building-blocks/` para o `.claude/` do projeto-alvo:
+```bash
+# exemplo: levar o /commit, o subagent revisor e o hook de segurança
+mkdir -p /caminho/projeto/.claude/{commands,agents,hooks}
+cp building-blocks/commands/commit.md        /caminho/projeto/.claude/commands/
+cp building-blocks/agents/revisor-de-codigo.md /caminho/projeto/.claude/agents/
+cp building-blocks/settings/settings-base.json /caminho/projeto/.claude/settings.json
+```
+Depois adapte o `CLAUDE.md` a partir de `building-blocks/claude-md/template-generico.md`.
+
+### 2. Usar como fonte de consulta
+Mantenha esta biblioteca clonada e consulte os `docs/` e `reference/` quando precisar —
+sem copiar nada. Bom para aprender/relembrar como cada recurso funciona.
+
+### 3. Referenciar como submódulo (avançado)
+Para times que querem versionar a fonte junto do projeto:
+```bash
+git submodule add <url-deste-repo> .biblioteca-claude
+# e então copiar/symlinkar peças de .biblioteca-claude/building-blocks/ conforme a necessidade
+```
+
+### Checklist rápido para um projeto novo
+1. `CLAUDE.md` enxuto (< 200 linhas) — stack, comandos, regras (`docs/02`).
+2. `.claude/settings.json` com permissões (`allow`/`deny` p/ proteger `.env`) (`docs/03`).
+3. Um hook de segurança em `PreToolUse` (`docs/06` + `building-blocks/hooks/`).
+4. Os slash commands/subagents/skills que fizerem sentido (`docs/04`/`05`/`07`).
+5. `.gitignore`: `settings.local.json`, `CLAUDE.local.md`.
+
+> Antes de copiar peças de **terceiros** (repos do catálogo), revise o código — ver a
+> nota de supply-chain em `reference/repos-recomendados.md`.
 
 ---
 
@@ -91,4 +121,4 @@ Cheatsheets e tabelas para olhar em segundos:
 - [x] Primeira `recipe/` (construir app com Claude Code)
 - [ ] Enriquecer a recipe de pipeline com os prompts curados
 - [ ] Verificar (via clone) os repos "a verificar" em `repos-recomendados.md`
-- [ ] Detalhar o guia "Como usar em outros projetos"
+- [x] Detalhar o guia "Como usar em outros projetos"
