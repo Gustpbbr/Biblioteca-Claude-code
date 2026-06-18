@@ -299,6 +299,31 @@ foi todo extraído e catalogado nos arquivos da biblioteca.
 
 ---
 
+## Lote 2026-06-18 (f) — Instagram (EM ANDAMENTO, ~40/314 lidos)
+
+> Usuário pediu p/ varrer também o Instagram (onde estão as dicas). Catalogando
+> só o relevante; ads (ElevenLabs, cursos frontend, dermocosmético, tijolos,
+> receitas, estudo de concurso etc.) descartados.
+
+### Achados relevantes
+- **Vídeo oficial "Mastering Claude Code in 30 minutes"** (Anthropic; Boris Cherny,
+  Member of Technical Staff) — citado como "como a própria equipe usa o Claude Code".
+  Carrossel associado: "40 comandos que deveriam ser padrão no Claude Code".
+- **"Skills are just folders" / "Don't build agents, build skills"** — talk de
+  **Barry Zhang & Mahesh Murag (Anthropic)**. Estrutura mostrada: `anthropic_brand/`
+  com `SKILL.md`, `docs.md`, `slide-decks.md`, `apply_template.py`. Reforça a
+  filosofia de Skills (pasta + SKILL.md, carregam sob demanda).
+- **paperclip** (`paperclip.ing`, @paperclipai) — orquestração open-source para
+  "empresas zero-humano" (~51k stars). Candidato a `repos-recomendados`.
+- **Demo multi-agente "OMO"** (@eduardocavalcanti) — agentes autônomos de fin-ops
+  (GL Reconciler, KYC Screener, Valuation Reviewer, Month-End Closer, Statement
+  Auditor), 1 sub-agente por empresa rodando em paralelo. Modelos visíveis:
+  `claude-sonnet-4-6` e `claude-haiku-4-5`. (mesmo produto do dashboard multi-Claude)
+- Confirma o **mapa da pasta `.claude/`** (@leadgenman) — já catalogado em
+  `reference/anatomia-projeto-claude.md`.
+
+---
+
 ## Itens a transformar em conteúdo (backlog)
 
 - [ ] Recipe: "Compartilhar memórias e skills em equipe via pasta sincronizada"
