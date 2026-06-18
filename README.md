@@ -4,8 +4,8 @@ Biblioteca de referência sobre **tudo que o Claude Code faz** — pensada para 
 reutilizada em todos os seus outros projetos. Aqui você encontra desde a
 explicação a fundo de cada funcionalidade até peças prontas pra copiar e colar.
 
-> **Status:** 🏗️ Em construção. A estrutura (esqueleto) está montada e o conteúdo
-> está sendo preenchido seção por seção.
+> **Status:** ✅ `docs/` (01–14) **100% preenchido** e verificado contra a doc oficial.
+> `reference/`, `building-blocks/` e `recipes/` em evolução contínua (curadoria ativa).
 
 ---
 
@@ -65,7 +65,13 @@ Guias práticos de ponta a ponta para tarefas comuns. Veja [`recipes/`](./recipe
 
 ## ⚡ Consulta rápida (`reference/`)
 
-Cheatsheets e tabelas para olhar em segundos. Veja [`reference/`](./reference/).
+Cheatsheets e tabelas para olhar em segundos:
+- [`anatomia-projeto-claude.md`](./reference/anatomia-projeto-claude.md) — todos os arquivos que o Claude Code lê
+- [`loops-e-goals.md`](./reference/loops-e-goals.md) — `/loop` e `/goal` (tarefas autônomas)
+- [`gestao-contexto-tokens.md`](./reference/gestao-contexto-tokens.md) — não estourar o contexto
+- [`claude-md-boas-praticas.md`](./reference/claude-md-boas-praticas.md) — bom `CLAUDE.md`
+- [`repos-recomendados.md`](./reference/repos-recomendados.md) — catálogo de repos da comunidade
+- [`curadoria-conteudo.md`](./reference/curadoria-conteudo.md) · [`pesquisa-2026-06.md`](./reference/pesquisa-2026-06.md)
 
 ---
 
@@ -79,8 +85,10 @@ Cheatsheets e tabelas para olhar em segundos. Veja [`reference/`](./reference/).
 
 ## 🗺️ Roadmap de preenchimento
 
-- [ ] Preencher `docs/` (referência completa de cada funcionalidade)
-- [ ] Popular `building-blocks/` com peças reais e testadas
-- [ ] Escrever as primeiras `recipes/`
-- [ ] Montar os cheatsheets de `reference/`
+- [x] Preencher `docs/` (01–14, referência completa — verificada na doc oficial)
+- [x] Primeiros cheatsheets de `reference/` (anatomia, loops/goals, contexto, claude.md)
+- [x] Primeiras peças em `building-blocks/` (`/commit`, subagent revisor, hook, templates)
+- [x] Primeira `recipe/` (construir app com Claude Code)
+- [ ] Enriquecer a recipe de pipeline com os prompts curados
+- [ ] Verificar (via clone) os repos "a verificar" em `repos-recomendados.md`
 - [ ] Detalhar o guia "Como usar em outros projetos"
