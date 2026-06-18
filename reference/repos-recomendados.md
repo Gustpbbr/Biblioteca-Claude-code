@@ -102,9 +102,11 @@ plugins para Claude Code. A referência geral da categoria.
 > Tema relacionado: ver os cheatsheets `gestao-contexto-tokens.md` e
 > `claude-md-boas-praticas.md`.
 
-## 🆕 Novos da curadoria de Instagram (2026-06-18) — ⚠️ a verificar
+## 🆕 Novos da curadoria de Instagram (2026-06-18)
 
-> Coletados de prints; **existência/licença ainda não conferida via clone**. Revise antes de usar.
+> **Existência confirmada via `git ls-remote` em 2026-06-18.** Licença/estrelas **não**
+> re-verificadas (a API do GitHub estava bloqueada pela política de rede deste ambiente) —
+> **revise licença e código antes de usar.** Itens sem owner/repo confirmado seguem como "ref.".
 
 **Orquestração / multi-agente**
 - **claude-flow v3** — `npx claude-flow@v3alpha init`. 60+ agentes, swarms c/ consenso, "Queen-led",
@@ -115,7 +117,7 @@ plugins para Claude Code. A referência geral da categoria.
 **Skills**
 - **hardikpandya/stop-slop** — remove "AI tells" da prosa (escrita mais humana).
 - **mukul975/Anthropic-Cybersecurity-Skills** — 754 skills mapeadas p/ MITRE ATT&CK.
-- **AgricDaniel/banana-claude** — geração de imagem (Claude como "Diretor de Arte" via Gemini Nano Banana).
+- **AgriciDaniel/banana-claude** — geração de imagem (Claude como "Diretor de Arte" via Gemini Nano Banana).
 - **remotion-dev/skills** — motion design/vídeo via Remotion (`npx skills add remotion-dev/skills`).
 - **anthropics/knowledge-work-plugins** (oficial) — plugins por área (eng., design, legal, finanças, RH…).
 

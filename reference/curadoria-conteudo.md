@@ -212,7 +212,7 @@ NVIDIA free APIs, DeepSeek, Cursor).
 - 🎬 **Remotion skill** (@maxcarrau.ia) — "Motion Design using Claude Code": `npx skills add
   remotion-dev/skills` (skill `remotion-best-practices`); você descreve e o Claude gera a animação
   via Remotion. Bom registro do padrão de instalação **`npx skills add <owner/repo>`**.
-- 🖼️ **banana-claude** (`AgricDaniel/banana-claude`) — skill de geração de imagem p/ Claude Code:
+- 🖼️ **banana-claude** (`AgriciDaniel/banana-claude`) — skill de geração de imagem p/ Claude Code:
   Claude atua como "Diretor de Arte" usando os modelos Gemini Nano Banana. Há também "Nano Banana
   MCP" p/ gerar imagem dentro do Claude (Code, Desktop, Cowork).
 - 📊 **Tabela comparativa de modelos** (@dfolloni, via cursorful.com) — Opus 4.7: 87.6% SWE-bench
