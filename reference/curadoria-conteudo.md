@@ -145,6 +145,25 @@ NVIDIA free APIs, DeepSeek, Cursor).
   (`.claude-plugin` / `.cursor-plugin` / `.copilot-plugin`), usa `docs/superpowers`.
 - Variante da skill "Conselho/Council" também vista em @maxcarrauda (mesmo conceito do @gabrielsamp).
 
+### Mais achados (prints 81-100)
+- ⭐⭐ **Boris Cherny no Acquired Unplugged** (via @davision.eth) — conceito "escreva os loops,
+  não os prompts": "Eu não dou mais prompt pro Claude. Tenho loops rodando que dão o prompt e
+  descobrem o que fazer. Meu trabalho é escrever os loops." Evolução do workflow dele: código na
+  mão → 5-10 sessões paralelas do Claude → loops automáticos (entregam tarefa, deixam agir,
+  conferem, decidem próximo passo). Dev sobe de executor para arquiteto. (ótimo p/ doc de
+  workflows agênticos; ⚠️ confirmar a fala na fonte antes de citar como exata)
+- ⭐ **anthropics/knowledge-work-plugins** (oficial) — marketplace de plugins por área
+  (bio-research, customer-support, design, engineering, enterprise-search, finance, HR, legal,
+  marketing) + desktop-commander, qodo-skills, servicenow-sdk.
+- **hardikpandya/stop-slop** — skill p/ remover "AI tells" da prosa (SKILL.md). Ótimo p/ escrita.
+- **mukul975/Anthropic-Cybersecurity-Skills** — 754 skills mapeadas p/ MITRE ATT&CK (.claude-plugin).
+- **affaan-m/ECC ("Everything Claude Code")** — harness de otimização: skills, instincts, memory,
+  security, research-first; PreToolUse hooks, prompt-defense; multi-tool (Claude Code, Codex, Cursor).
+- Menções (reel @tatagoncalvesof): `microsoft/markitdown` (doc→md p/ contexto), `colbymchenry/codegraph`
+  (MCP grafo de código), `Leonxlnx/taste-skill`, `revfactory/harness`, `rohitg00/ai-engineering-from-scratch`.
+- Fable 5 (hype @Overlens) — confirma editor de imagem com presets (1-bit dither, film grain,
+  vaporwave, blueprint, thermal cam, etc.) — alinhado com `docs/14` (skills de mídia).
+
 ### Descartado (ruído)
 Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
 receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
