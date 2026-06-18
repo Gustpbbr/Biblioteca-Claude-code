@@ -111,6 +111,8 @@ NVIDIA free APIs, DeepSeek, Cursor).
 > Reporto só o relevante; ads/receitas/estudo de concurso = descartados.
 
 ### ⭐ Achados de alto valor
+- ✅ **VIROU DOC:** `reference/anatomia-projeto-claude.md` (verificado na doc oficial;
+  print do @leadgenman estava majoritariamente certo — inclusive `rules/` path-scoped).
 - **Mapa canônico da pasta `.claude/`** (@leadgenman) — referência ótima p/ um doc de
   estrutura. Arquivos: `CLAUDE.md` (advisory, <200 linhas), `CLAUDE.local.md` (overrides
   pessoais, gitignored), `.mcp.json` (servers MCP, na raiz), `.claude/` com `hooks/`
