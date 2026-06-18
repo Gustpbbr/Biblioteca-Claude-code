@@ -8,6 +8,8 @@ Cheatsheets e tabelas para olhar em segundos.
   arquivos/pastas que o Claude Code lê** (árvore + tabela + precedência + mitos).
 - [`loops-e-goals.md`](./loops-e-goals.md) — comandos **`/loop`** e **`/goal`** para
   tarefas autônomas e de longa duração.
+- [`modelos-claude.md`](./modelos-claude.md) — IDs dos modelos (Opus 4.8, Sonnet 4.6,
+  Haiku 4.5, Fable 5) e quando usar cada um.
 - [`gestao-contexto-tokens.md`](./gestao-contexto-tokens.md) — táticas para não
   estourar o limite de contexto e manter performance.
 - [`claude-md-boas-praticas.md`](./claude-md-boas-praticas.md) — princípios de um
@@ -24,4 +26,4 @@ Cheatsheets e tabelas para olhar em segundos.
 - [x] Flags/atalhos da CLI → coberto em `docs/01-cli-e-modos.md`
 - [x] Eventos de hooks → coberto em `docs/06-hooks.md`
 - [x] Sintaxe de permissões → coberto em `docs/03-settings-e-permissoes.md`
-- [ ] (ideia) tabela única de modelos (IDs/contexto) — manter sincronizada com a doc oficial
+- [x] Tabela única de modelos → `modelos-claude.md`
