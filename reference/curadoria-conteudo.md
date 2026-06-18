@@ -105,6 +105,33 @@ NVIDIA free APIs, DeepSeek, Cursor).
 
 ---
 
+## Lote 2026-06-18 (f) — Instagram (em andamento)
+
+> Varredura dos ~314 prints do Instagram (decisão do usuário: "tem muita coisa lá").
+> Reporto só o relevante; ads/receitas/estudo de concurso = descartados.
+
+### ⭐ Achados de alto valor
+- **Mapa canônico da pasta `.claude/`** (@leadgenman) — referência ótima p/ um doc de
+  estrutura. Arquivos: `CLAUDE.md` (advisory, <200 linhas), `CLAUDE.local.md` (overrides
+  pessoais, gitignored), `.mcp.json` (servers MCP, na raiz), `.claude/` com `hooks/`
+  (`PostToolUse.sh`, `SessionStart.sh`, `PreCompact.sh` — determinísticos), `commands/`
+  (slash legacy), `skills/` (model-invokable, sob demanda), `agents/` (subagents, contexto
+  isolado), `output-styles/`, `plugins/` (1st-class 2026, `/plugin:command`), `rules/`
+  (path-scoped, carrega via glob — ⚠️ VERIFICAR se é oficial), `statusline`, `settings.json`
+  + `settings.local.json`. Lema: "CLAUDE.md is advisory. hooks are deterministic. skills load on demand."
+- 🎥 **Vídeo oficial Anthropic "Mastering Claude Code in 30 minutes"** (Boris Cherny) — referência.
+- 📁 **Talk "Don't build agents, build skills" / "Skills are just folders"** (Barry Zhang & Mahesh Murag, Anthropic) — skill = pasta com `SKILL.md` + recursos (ex.: `apply_template.py`).
+
+### Achados menores / tendências
+- **paperclip** (`paperclip.ing`) — orquestração open-source de agentes (~51k stars).
+- Demos de multi-agente em produção citam modelos reais: **`claude-sonnet-4-6`**, **`claude-haiku-4-5`** (confirma IDs).
+
+### Descartado (ruído)
+Ads (ElevenLabs, curso frontend rodrigotadewald, GPAI, dermocosméticos, construção, etc.),
+receitas, conteúdo de estudo p/ concurso, posts pessoais, e agentes de concorrentes (Gemini Omni/Spark).
+
+---
+
 ## Lote 2026-06-18 (e) — restante da pasta (PARCIAL: ~140/625 lidos)
 
 > A contagem real da pasta é **625 imagens** (não 100 — a paginação do Drive
