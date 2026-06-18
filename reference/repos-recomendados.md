@@ -83,6 +83,25 @@ plugins para Claude Code. A referência geral da categoria.
 
 ---
 
+## 💾 Economia de contexto/tokens e RAG de codebase
+
+> Encontrados em conteúdo de redes sociais (curadoria do usuário). ⭐ aproximadas;
+> **revise o código antes de usar**. Todos prometem reduzir tokens dando ao Claude
+> contexto mais preciso em vez de reler tudo.
+
+- **rtk** — proxy de CLI (binário Rust) que filtra/comprime saídas de comandos
+  antes de irem ao contexto; promete **60–90% menos tokens**, 100+ comandos, <10ms.
+- **code-review-graph** — mapa estrutural do código com Tree-sitter, incremental,
+  entrega contexto preciso via MCP (foco em code review). PyPI.
+- **Graphify** (`/graphify`) — skill que constrói um grafo de conhecimento
+  (JSON+HTML) do codebase/docs como **RAG local**; visualização no Obsidian.
+  Funciona em Claude Code e vários outros agentes. ~16k⭐.
+- **brain-ingest** — transcreve YouTube/podcast/áudio e salva nota limpa no
+  Obsidian, acessível ao Claude (alimenta o "segundo cérebro").
+
+> Tema relacionado: ver os cheatsheets `gestao-contexto-tokens.md` e
+> `claude-md-boas-praticas.md`.
+
 ## ⚖️ Nota sobre uso
 
 Estes são repositórios de **terceiros**. Antes de instalar plugins/skills/MCP de

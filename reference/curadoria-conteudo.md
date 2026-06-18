@@ -62,6 +62,49 @@ vídeos). Sinaliza o que é **relevante** para a biblioteca (✅), o que é **ru
 
 ---
 
+## Lote 2026-06-18 (d) — pasta "Prints Claude code" do Drive (100 imagens)
+
+Varredura completa via OCR (`read_file_content`). A pasta é um dump misto: a
+maioria é **conteúdo pessoal do usuário** (não entra no repo) ou ruído. Abaixo,
+só o que é relevante para a biblioteca.
+
+### ⚠️ Privacidade e segurança (ação recomendada)
+- **Revogar/rotacionar** chaves que apareceram em prints: **Qdrant API key**
+  (cluster "Gus_") e conferir a `ANTHROPIC_API_KEY` exibida no Railway.
+- Há **dados médicos de paciente** (Dimagem) e financeiros (Pix) em prints —
+  conteúdo sensível; **nada disso foi copiado para o repositório**.
+
+### ✅ Tools/skills da comunidade encontrados (de redes sociais — ⭐ aproximadas, confirmar)
+- **CLAUDE.md "anti-maus-hábitos"** (forrestchang, ~78,5k⭐) — 4 princípios baseados
+  nas críticas do Karpathy. → virou cheatsheet `reference/claude-md-boas-praticas.md`.
+- **Graphify** (`/graphify`, safishar, ~16k⭐) — skill que monta um grafo de
+  conhecimento do codebase (JSON+HTML) como RAG local, visível no Obsidian.
+- **rtk** — proxy de CLI que reduz consumo de tokens em 60–90% (binário Rust,
+  filtra/comprime saídas de comandos antes de irem pro contexto).
+- **code-review-graph** — mapa estrutural do código via Tree-sitter, contexto
+  preciso para review via MCP.
+- **brain-ingest** — transcreve YouTube/podcast/áudio → nota no Obsidian acessível ao Claude.
+- **Obsidian + MCP** (smart-connections) — "segundo cérebro" conectado ao Claude.
+
+### ✅ Técnicas/conceitos relevantes
+- **Gestão de contexto/tokens** (carrossel @brandsdecoded_, base: vídeo do Nate Herk)
+  → virou cheatsheet `reference/gestao-contexto-tokens.md`.
+- **Skills = expertise empacotada** (@rafaelmilagre): markdown que ensina seu fluxo;
+  agente genérico + biblioteca de skills > muitos agentes especializados.
+- **Conectar MCP server remoto como Connector no claude.ai** (passos genéricos).
+
+### 🔎 A verificar (não cataloguei como fato)
+- **"Claude Managed Agents"** (@diegoalmeida.ia): alegação de que a Anthropic lançou
+  infra gerenciada de agentes (beta público; Notion/Asana/Rakuten/Sentry usando).
+  **Confirmar na fonte oficial** antes de documentar.
+- Comandos citados a confirmar na doc: `/btw` (pergunta fora do histórico), `/re`.
+
+### ❌ Ruído/pessoal (não entra): NeuroGus, gus-mcp-server, formulário médico,
+Pix, Shakira Copacabana, farinha/focaccia, café, galáxias, móveis, ads (OpenClaw,
+NVIDIA free APIs, DeepSeek, Cursor).
+
+---
+
 ## Itens a transformar em conteúdo (backlog)
 
 - [ ] Recipe: "Compartilhar memórias e skills em equipe via pasta sincronizada"
