@@ -1,0 +1,8 @@
+# Transcrição FICTÍCIA de um debate (candidatos fictícios, para manter neutralidade).
+# Formato: [mm:ss] Orador: texto
+[00:12] Candidato A: O desemprego hoje é o menor da história do Brasil.
+[00:20] Candidato A: Investimos 2 bilhões de reais em saneamento básico só em 2025.
+[00:31] Candidata B: Isso é mentira, o meu governo é o melhor que esse país já teve.
+[00:39] Candidata B: A inflação fechou 2025 em 4,5 por cento.
+[00:48] Candidato A: O Brasil é o país que mais preserva floresta no mundo.
+[00:55] Candidata B: Vou gerar 10 milhões de empregos no meu mandato.

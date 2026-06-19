@@ -1,0 +1,11 @@
+[
+  {
+    "gatilhos": ["inflacao", "inflação", "ipca"],
+    "fonte": "IBGE — IPCA",
+    "tipo_fonte": "FONTE_PRIMARIA",
+    "trecho": "O IPCA (inflação oficial) fechou 2025 em 4,5%, dentro do intervalo de tolerância da meta. (valor ilustrativo no mock)",
+    "url": "https://www.ibge.gov.br/",
+    "data": "2026-01-10",
+    "grau_sugerido": "VERDADEIRO"
+  }
+]

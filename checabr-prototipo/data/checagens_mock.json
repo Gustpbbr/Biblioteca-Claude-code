@@ -1,0 +1,20 @@
+[
+  {
+    "id": "af-001",
+    "afirmacao": "o desemprego hoje é o menor da história do brasil",
+    "grau": "ENGANOSO",
+    "resumo": "A taxa de desocupação caiu, mas NÃO é a menor da série histórica do IBGE; a comparação ignora mudanças de metodologia e o tipo de vínculo (informalidade).",
+    "fonte": "Aos Fatos",
+    "url": "https://www.aosfatos.org/",
+    "data": "2026-05-10"
+  },
+  {
+    "id": "lupa-014",
+    "afirmacao": "o brasil é o país que mais preserva floresta no mundo",
+    "grau": "FORA_DE_CONTEXTO",
+    "resumo": "O Brasil tem grande área florestal e alta cobertura relativa, mas 'o que mais preserva' depende do indicador (área absoluta, % do território, desmatamento). O dado é usado fora de contexto.",
+    "fonte": "Agência Lupa",
+    "url": "https://lupa.uol.com.br/",
+    "data": "2026-04-02"
+  }
+]
