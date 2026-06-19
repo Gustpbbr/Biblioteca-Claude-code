@@ -9,6 +9,9 @@ Guias práticos de ponta a ponta para tarefas comuns com o Claude Code.
 - [`assistente-de-voz.md`](./assistente-de-voz.md) — assistente de voz autônomo
   ("Jarvis"): conversa fluida + Claude como cérebro + autonomia (faz vídeo, site,
   manda email, salva no Drive). Arquitetura em 2 camadas + 3 fases.
+- [`animar-foto-em-video.md`](./animar-foto-em-video.md) — transformar uma foto em
+  vídeo de ~5s: os 3 níveis (movimento de câmera → render → animação generativa
+  image-to-video) e como habilitar `replicate/skills` para o Nível 3.
 
 ## Receitas previstas
 
